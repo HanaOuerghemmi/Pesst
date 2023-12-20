@@ -70,18 +70,7 @@
     {
       "name": "flutter_test",
       "rootUri": "file:///home/dali/snap/flutter/common/flutter/packages/flutter_test",
-      "packageUri": "lib/",
-      "languageVersion": "3.2"
-    },
-    {
-      "name": "google_fonts",
-      "rootUri": "file:///home/dali/.pub-cache/hosted/pub.dev/google_fonts-6.1.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.14"
-    },
-    {
-      "name": "http",
-      "rootUri": "file:///home/dali/.pub-cache/hosted/pub.dev/http-1.1.2",
+
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -248,7 +237,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2023-12-20T16:13:39.215029Z",
+
   "generator": "pub",
   "generatorVersion": "3.2.3"
 }
