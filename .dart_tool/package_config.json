@@ -160,12 +160,7 @@
     {
       "name": "flutter_test",
       "rootUri": "file:///home/hana/snap/flutter/common/flutter/packages/flutter_test",
-      "packageUri": "lib/",
-      "languageVersion": "3.2"
-    },
-    {
-      "name": "flutter_web_plugins",
-      "rootUri": "file:///home/hana/snap/flutter/common/flutter/packages/flutter_web_plugins",
+
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -362,7 +357,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2023-12-22T14:10:07.383539Z",
+
   "generator": "pub",
   "generatorVersion": "3.2.0"
 }
