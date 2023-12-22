@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pisiit/features/auth/repository/auth_repository.dart';
-import 'package:pisiit/models/user_model.dart';
+import 'package:pesst/features/auth/repository/auth_repository.dart';
+import 'package:pesst/models/user_model.dart';
 
 final authControllerProvider = Provider((ref) {
   final authRepository = ref.watch(authRepositoryProvider);
