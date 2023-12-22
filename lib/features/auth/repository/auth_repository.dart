@@ -4,11 +4,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pisiit/features/auth/screens/home_auth_screen.dart';
-import 'package:pisiit/features/home/screen/home_application_screen.dart';
-import 'package:pisiit/models/user_model.dart';
-import 'package:pisiit/utils/signin_showpopup.dart';
-import 'package:pisiit/utils/storage_firebase.dart';
+import 'package:pesst/common/storage_firebase.dart';
+import 'package:pesst/features/auth/screens/home_auh_screen.dart';
+
+import 'package:pesst/models/user_model.dart';
+
 import 'package:email_validator/email_validator.dart';
 
 final authRepositoryProvider = Provider(
@@ -99,25 +99,20 @@ class AuthRepository {
         password: password,
       );
 
-      showPopUp(
-          context,
-          "Login Successful!",
-          "You will be directed to HomePage",
-          Icons.lock_clock_outlined,
-          Duration(seconds: 20));
+     
       UserModel? userModel = await getCurrentUserData();
 
-      await Navigator.pushAndRemoveUntil(
-        context,
-        MaterialPageRoute(
-          builder: (context) => HomeApplicationScreen(
-            userModel: userModel,
-          ),
-        ),
-        (route) => false,
-      );
+      // await Navigator.pushAndRemoveUntil(
+      //   context,
+      //   MaterialPageRoute(
+      //     builder: (context) => HomeApplicationScreen(
+      //       userModel: userModel,
+      //     ),
+      //   ),
+      //   (route) => false,
+      // );
     } catch (error) {
-      showSnackBar(context, "email or password inccorect $error");
+     // showSnackBar(context, "email or password inccorect $error");
       print("Error signing in: $error");
       return null;
     }
@@ -163,26 +158,18 @@ class AuthRepository {
           noteAccount: 0,
           numberPisit: 10,
         );
-        showPopUp(
-            context,
-            "Register Successful!",
-            "You will be directed to HomePage",
-            Icons.lock_clock_outlined,
-            Duration(seconds: 20));
+        // showPopUp(
+        //     context,
+        //     "Register Successful!",
+        //     "You will be directed to HomePage",
+        //     Icons.lock_clock_outlined,
+        //     Duration(seconds: 20));
         await firestore
             .collection('Users')
             .doc(user.user!.uid)
             .set(userModel.toMap());
 
-        Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(
-            builder: (context) => HomeApplicationScreen(
-              userModel: userModel,
-            ),
-          ),
-          (route) => false,
-        );
+       
       });
     } on FirebaseAuthException catch (error) {
       print("Error signing up: $error");
@@ -209,26 +196,6 @@ class AuthRepository {
         );
   }
 
-  // Future<void> saveUserDataToFirebase(
-  //     String username, String profileImageUrl) async {
-  //   try {
-  //     // Reference to the user's document in Firestore
-  //     DocumentReference userRef = firestore.collection('users').doc();
-
-  //     // Data to update in the user's document
-  //     Map<String, dynamic> userData = {
-  //       'username': username,
-  //       'profileImageUrl': profileImageUrl ?? '',
-  //       // Add any other fields you want to save
-  //     };
-
-  //     // Update the user's document in Firestore
-  //     await userRef.set(userData, SetOptions(merge: true));
-  //   } catch (error) {
-  //     print("Error saving user data: $error");
-  //     // Handle the error accordingly
-  //   }
-  //}
 
   // Function to fetch user data from Firebase
   Future<UserModel?> fetchUserData() async {
