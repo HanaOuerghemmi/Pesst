@@ -1,9 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:pesst/colors.dart';
-import 'package:pesst/helper_textstyle.dart';
-
-
+import 'package:pesst/utils/colors.dart';
+import 'package:pesst/utils/helper_textstyle.dart';
 
 class CustomButton extends StatelessWidget {
   final Color? colorText;
@@ -34,7 +32,7 @@ class CustomButton extends StatelessWidget {
         ),
         child: Text(
           textButton,
-          style: textStyleTextBold.copyWith(color: colorText ?? lightColor ),
+          style: textStyleTextBold.copyWith(color: colorText ?? lightColor),
         ),
       ),
     );

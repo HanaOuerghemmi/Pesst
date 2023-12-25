@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pesst/colors.dart';
+import 'package:pesst/utils/colors.dart';
 import 'package:pesst/features/auth/screens/widgets/custom_validate_text_fied.dart';
 import 'package:pesst/features/auth/screens/widgets/goto_signup.dart';
-import 'package:pesst/helper_padding.dart';
-import 'package:pesst/helper_textstyle.dart';
+import 'package:pesst/utils/helper_padding.dart';
+import 'package:pesst/utils/helper_textstyle.dart';
 import 'package:pesst/widgets/custom_button.dart';
-
 
 class LoginScreen extends ConsumerStatefulWidget {
   static const routeName = '/login-screen';
@@ -22,8 +21,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   bool showPassword = true;
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -49,13 +46,13 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 smallPaddingVert,
                 //* ussing a textfiel with validate function shoing snackbar
                 CustomValidateTextField(
-                    controller: emailController,
-                    nameTextField: "Email",
-                    prefixIcon: const Icon(
-                      Icons.email,
-                      color: blackColor,
-                    ),                 
-                    ),
+                  controller: emailController,
+                  nameTextField: "Email",
+                  prefixIcon: const Icon(
+                    Icons.email,
+                    color: blackColor,
+                  ),
+                ),
                 // TextFieldAuth(
                 //   controller: emailController,
                 //   nameTextField: "Email",
@@ -67,13 +64,13 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 smallPaddingVert,
                 CustomValidateTextField(
                   isPassword: true,
-                    nameTextField: "Password",
+                  nameTextField: "Password",
                   controller: passwordController,
                   prefixIcon: const Icon(
                     Icons.lock,
                     color: blackColor,
                   ),
-                    ),
+                ),
                 // TextFieldAuth(
                 //   nameTextField: "Password",
                 //   controller: passwordController,
@@ -99,7 +96,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   alignment: Alignment.topRight,
                   child: TextButton(
                       onPressed: () {
-                       // Navigator.pushNamed(context, resetPassword.routeName);
+                        // Navigator.pushNamed(context, resetPassword.routeName);
                       },
                       child: Text(
                         "Forget Password?",
@@ -117,15 +114,15 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 CustomButton(
                     colorText: whiteColor,
                     textButton: "Log in",
-                    onPressed: (){}
+                    onPressed: () {}
                     //logInWithEmailAndPassword
                     // () {
-                      // if (!_formKey.currentState!.validate()) {
-                      //   _formKey.currentState!.save();
-                        
-                      // }
-                      //logInWithEmailAndPassword;
-                   // }
+                    // if (!_formKey.currentState!.validate()) {
+                    //   _formKey.currentState!.save();
+
+                    // }
+                    //logInWithEmailAndPassword;
+                    // }
                     ),
               ],
             ),

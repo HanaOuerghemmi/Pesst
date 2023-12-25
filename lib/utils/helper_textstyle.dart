@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pesst/colors.dart';
+import 'package:pesst/utils/colors.dart';
 
 TextStyle textStyleTitle = GoogleFonts.poppins(
   color: newblack,
