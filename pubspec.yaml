@@ -40,6 +40,7 @@ dependencies:
   firebase_auth: ^4.15.3
   email_validator: ^2.1.17
   firebase_storage: ^11.5.6
+  otp: ^3.1.4
 
 dev_dependencies:
   flutter_test:
@@ -52,6 +53,7 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
   google_fonts: ^6.1.0
+  mailer: ^6.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
