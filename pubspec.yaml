@@ -40,7 +40,12 @@ dependencies:
   firebase_auth: ^4.15.3
   email_validator: ^2.1.17
   firebase_storage: ^11.5.6
+<<<<<<< HEAD
   otp: ^3.1.4
+=======
+  country_picker: ^2.0.22
+  image_picker: ^0.8.7 
+>>>>>>> 35646083b4c85513e5e725868aeec877941532dc
 
 dev_dependencies:
   flutter_test:
