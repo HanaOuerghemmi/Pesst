@@ -304,16 +304,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
-<<<<<<< HEAD
-  intl:
-    dependency: transitive
-    description:
-      name: intl
-      sha256: "3bc132a9dbce73a7e4a21a17d06e1878839ffbf975568bc875c60537824b0c4d"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.18.1"
-=======
   image_picker:
     dependency: "direct main"
     description:
@@ -378,7 +368,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.1+1"
->>>>>>> 35646083b4c85513e5e725868aeec877941532dc
+  intl:
+    dependency: transitive
+    description:
+      name: intl
+      sha256: "3bc132a9dbce73a7e4a21a17d06e1878839ffbf975568bc875c60537824b0c4d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.18.1"
   js:
     dependency: transitive
     description:
@@ -443,7 +440,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
-<<<<<<< HEAD
   otp:
     dependency: "direct main"
     description:
@@ -452,8 +448,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.4"
-=======
->>>>>>> 35646083b4c85513e5e725868aeec877941532dc
   path:
     dependency: transitive
     description:
