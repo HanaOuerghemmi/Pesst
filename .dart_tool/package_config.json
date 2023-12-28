@@ -488,9 +488,13 @@
       "languageVersion": "3.2"
     }
   ],
+<<<<<<< HEAD
 
   "generated": "2023-12-28T08:40:45.062314Z",
 
+=======
+  "generated": "2023-12-28T09:23:01.322671Z",
+>>>>>>> b3ae661 (logic Home)
   "generator": "pub",
   "generatorVersion": "3.2.0"
 }
