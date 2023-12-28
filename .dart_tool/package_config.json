@@ -14,7 +14,6 @@
       "languageVersion": "2.18"
     },
     {
-
       "name": "boolean_selector",
       "rootUri": "file:///home/hana/.pub-cache/hosted/pub.dev/boolean_selector-2.1.1",
       "packageUri": "lib/",
@@ -280,9 +279,7 @@
     },
     {
       "name": "intl",
-
       "rootUri": "file:///home/hana/.pub-cache/hosted/pub.dev/intl-0.18.1",
-
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -330,13 +327,11 @@
     },
     {
       "name": "mime",
-
       "rootUri": "file:///home/hana/.pub-cache/hosted/pub.dev/mime-1.0.4",
-
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
-   
+    {
       "name": "path",
       "rootUri": "file:///home/hana/.pub-cache/hosted/pub.dev/path-1.8.3",
       "packageUri": "lib/",
@@ -445,7 +440,6 @@
       "languageVersion": "3.0"
     },
     {
-
       "name": "typed_data",
       "rootUri": "file:///home/hana/.pub-cache/hosted/pub.dev/typed_data-1.3.2",
       "packageUri": "lib/",
@@ -488,13 +482,9 @@
       "languageVersion": "3.2"
     }
   ],
-<<<<<<< HEAD
-
   "generated": "2023-12-28T08:40:45.062314Z",
-
-=======
   "generated": "2023-12-28T09:23:01.322671Z",
->>>>>>> b3ae661 (logic Home)
+  "generated": "2023-12-28T09:27:21.615782Z",
   "generator": "pub",
   "generatorVersion": "3.2.0"
 }
