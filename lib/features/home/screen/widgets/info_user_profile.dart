@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pesst/features/home/screen/my_profile/edit_profile.dart';
+
 import 'package:pesst/models/user_model.dart';
 import 'package:pesst/utils/helper_padding.dart';
 import 'package:pesst/utils/helper_textstyle.dart';

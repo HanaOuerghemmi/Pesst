@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:country_picker/country_picker.dart';
+
 import 'package:pesst/features/auth/screens/widgets/customtext_field.dart';
 import 'package:pesst/features/auth/screens/widgets/title_widget.dart';
 import 'package:pesst/utils/helper_padding.dart';
-import 'package:pisiit/features/auth/widgets/customtext_field.dart';
-import 'package:pisiit/features/auth/widgets/widget_title.dart';
-import 'package:pisiit/utils/colors.dart';
-import 'package:pisiit/utils/helper_padding.dart';
-import 'package:pisiit/widgets/custom_button.dart';
+
 
 class InfoWidget extends StatefulWidget {
   final TabController tabController;
