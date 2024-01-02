@@ -40,9 +40,12 @@ dependencies:
   firebase_auth: ^4.15.3
   email_validator: ^2.1.17
   firebase_storage: ^11.5.6
-
   country_picker: ^2.0.22
   image_picker: ^0.8.7 
+  otp: ^3.1.4
+  font_awesome_flutter: ^10.6.0
+  badges: ^3.1.2
+  cached_network_image: ^3.3.1
   
 
 

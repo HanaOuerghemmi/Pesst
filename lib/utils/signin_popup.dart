@@ -1,18 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lottie/lottie.dart';
-import 'package:pisiit/features/auth/widgets/widget_title.dart';
-import 'package:pisiit/features/chat/controller/chat_controller.dart';
-import 'package:pisiit/features/home/controller/home_controller.dart';
-import 'package:pisiit/features/home/screen/user_profile/user_profile.dart';
-import 'package:pisiit/features/home/screen/widgets/image_widget.dart';
-import 'package:pisiit/models/request_model.dart';
-import 'package:pisiit/models/user_model.dart';
-import 'package:pisiit/utils/colors.dart';
+import 'package:pesst/utils/colors.dart';
+import 'package:pesst/utils/helper_padding.dart';
+import 'package:pesst/utils/helper_textstyle.dart';
 
-import 'package:pisiit/utils/helper_padding.dart';
-import 'package:pisiit/utils/helper_textstyle.dart';
-import 'package:pisiit/widgets/custom_button.dart';
 
 void showPopUp(BuildContext context, String title, String message,
     IconData icon, Duration duration) {

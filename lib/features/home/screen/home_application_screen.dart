@@ -1,15 +1,15 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:pesst/features/auth/controller/auth_controller.dart';
 import 'package:badges/badges.dart' as badges;
-import 'package:pesst/features/chat/screens/chats_screen.dart';
-import 'package:pesst/features/home/controller/home_controller.dart';
+
 import 'package:pesst/features/home/screen/home/home_screen.dart';
-import 'package:pesst/features/home/screen/my_profile/profile_screen.dart';
+
 import 'package:pesst/models/user_model.dart';
 import 'package:pesst/utils/colors.dart';
 import 'package:pesst/utils/helper_textstyle.dart';
