@@ -5,13 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'package:pesst/features/home/controller/home_controller.dart';
-import 'package:pesst/features/home/screen/user_profile/user_profile.dart';
+
 import 'package:pesst/models/user_model.dart';
 import 'package:pesst/utils/colors.dart';
 import 'package:pesst/utils/helper_padding.dart';
 import 'package:pesst/utils/helper_textstyle.dart';
-import 'package:pesst/utils/modalBottomSheet.dart';
+
 
 class HomeScreen extends StatefulWidget {
   final UserModel userModel;

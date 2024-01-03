@@ -16,6 +16,7 @@ import 'package:pesst/features/auth/screens/signup_widget/interest_widget.dart';
 import 'package:pesst/features/auth/screens/signup_widget/nickname_widget.dart';
 import 'package:pesst/features/auth/screens/signup_widget/relationgoals_widget.dart';
 import 'package:pesst/utils/colors.dart';
+import 'package:pesst/utils/request_showpop.dart';
 import 'package:pesst/widgets/custom_button.dart';
 
 class SignUpScreen extends ConsumerStatefulWidget {
@@ -268,7 +269,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                               const BorderRadius.all(Radius.circular(12)),
                           minHeight: 10,
                           backgroundColor: greyColor,
-                          color: blueColor,
+                          color: primaryColor,
                           valueColor:
                               const AlwaysStoppedAnimation<Color>(primaryColor),
                           value: (tabController.index / 6).toDouble(),
