@@ -4,12 +4,15 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pesst/features/home/controller/home_controller.dart';
+import 'package:pesst/features/home/screen/profile/user_profile.dart';
 
 
 import 'package:pesst/models/user_model.dart';
 import 'package:pesst/utils/colors.dart';
 import 'package:pesst/utils/helper_padding.dart';
 import 'package:pesst/utils/helper_textstyle.dart';
+import 'package:pesst/utils/modal_bottom_sheet.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -29,7 +32,11 @@ class _HomeScreenState extends State<HomeScreen> {
       context: context,
       isScrollControlled: true,
       builder: (BuildContext context) {
-        return ModalBottomSheet();
+        return ModalBottomSheet(
+          goalRelation: [],
+          gender: [],
+          minAndMaxAge: [],
+        );
       },
     );
   }
@@ -169,11 +176,11 @@ class ItemListUsers extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(
-          context,
-          UserProfile.routeName,
-          arguments: {"userModel": userModel, "ownUserModel": ownUserModel},
-        );
+        // Navigator.pushNamed(
+        //   context,
+        //   UserProfile.routeName,
+        //   arguments: {"userModel": userModel, "ownUserModel": ownUserModel},
+        // );
       },
       child: Stack(
         children: [

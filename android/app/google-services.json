@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "36110136000",
+    "project_id": "pesst-424f5",
+    "storage_bucket": "pesst-424f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36110136000:android:bcdae608349744f8f43325",
+        "android_client_info": {
+          "package_name": "com.example.pesst"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb4e_PjUqrOmv-VKYBTQMxJKBu-3r9nqk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -10,6 +10,7 @@ import 'package:pesst/features/auth/screens/home_auh_screen.dart';
 import 'package:pesst/models/user_model.dart';
 
 import 'package:email_validator/email_validator.dart';
+import 'package:pesst/utils/signin_popup.dart';
 
 final authRepositoryProvider = Provider(
   (ref) => AuthRepository(
@@ -158,12 +159,12 @@ class AuthRepository {
           noteAccount: 0,
           numberPisit: 10,
         );
-        // showPopUp(
-        //     context,
-        //     "Register Successful!",
-        //     "You will be directed to HomePage",
-        //     Icons.lock_clock_outlined,
-        //     Duration(seconds: 20));
+         showPopUp(
+             context,
+             "Register Successful!",
+             "You will be directed to HomePage",
+             Icons.lock_clock_outlined,
+             Duration(seconds: 20));
         await firestore
             .collection('Users')
             .doc(user.user!.uid)

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pesst/features/auth/screens/signup_screen.dart';
 import 'package:pesst/utils/colors.dart';
 import 'package:pesst/utils/helper_textstyle.dart';
 
@@ -13,10 +14,10 @@ class GoToSignUp extends StatelessWidget {
         Text("Don't have an  account?", style: textStyleTextBold),
         TextButton(
             onPressed: () {
-              // Navigator.pushNamed(
-              //   context,
-              //  // SignUpScreen.routeName,
-              // );
+               Navigator.pushNamed(
+                 context,
+                 SignUpScreen.routeName,
+               );
             },
             child: Text(
               "Sign up",

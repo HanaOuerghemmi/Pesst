@@ -1,0 +1,1 @@
+ /home/hana/HanaDoc/pesst/.dart_tool/flutter_build/e56794c39a4934279e237d581ccb802e/native_assets.yaml: 

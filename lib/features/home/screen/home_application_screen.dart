@@ -7,12 +7,16 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:pesst/features/auth/controller/auth_controller.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:pesst/features/home/controller/home_controller.dart';
 
 import 'package:pesst/features/home/screen/home/home_screen.dart';
+import 'package:pesst/features/home/screen/profile/profile_screen.dart';
 
 import 'package:pesst/models/user_model.dart';
 import 'package:pesst/utils/colors.dart';
 import 'package:pesst/utils/helper_textstyle.dart';
+
+import '../../chat/screen/chat_screen.dart';
 
 class HomeApplicationScreen extends StatefulWidget {
   UserModel? userModel;
@@ -54,10 +58,10 @@ class _HomeApplicationScreenState extends State<HomeApplicationScreen> {
             userModel: widget.userModel!,
           ),
           ChatsScreen(
-            userModel: widget.userModel!,
+           // userModel: widget.userModel!,
           ),
           ProfileScreen(
-            userModel: widget.userModel!,
+           // userModel: widget.userModel!,
           ),
         ],
       ),
