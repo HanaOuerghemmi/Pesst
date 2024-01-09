@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -6,10 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pesst/common/storage_firebase.dart';
 import 'package:pesst/features/auth/screens/home_auh_screen.dart';
+import 'package:pesst/features/home/screen/home/screen/home_application_screen.dart';
 
 import 'package:pesst/models/user_model.dart';
 
 import 'package:email_validator/email_validator.dart';
+import 'package:pesst/utils/request_showpop.dart';
 import 'package:pesst/utils/signin_popup.dart';
 
 final authRepositoryProvider = Provider(
@@ -26,6 +29,24 @@ class AuthRepository {
     required this.auth,
     required this.firestore,
   });
+  Stream<UserModel?> getCurrentUserDataAsStream() {
+    final streamcurrentUser = auth.currentUser;
+    if (streamcurrentUser != null) {
+      return firestore
+          .collection('Users')
+          .doc(streamcurrentUser.uid)
+          .snapshots()
+          .map((snapshot) {
+        if (snapshot.exists) {
+          return UserModel.fromMap(snapshot.data()!);
+        } else {
+          return null;
+        }
+      });
+    } else {
+      return  Stream.value(null);
+    }
+  }
 
   Future<UserModel?> getCurrentUserData() async {
     var userData =
@@ -36,6 +57,17 @@ class AuthRepository {
       user = UserModel.fromMap(userData.data()!);
     }
     return user;
+  }
+
+  //!reset with sending mail
+  Future<void> resetPassword(BuildContext context, String email) async {
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      print("Password reset email sent successfully");
+    } catch (e) {
+      print("Error sending password reset email: $e");
+      showSnackBar(context, "Error sending password reset email: $e");
+    }
   }
 //!reset password
 
@@ -100,20 +132,25 @@ class AuthRepository {
         password: password,
       );
 
-     
+      showPopUp(
+          context,
+          "Login Successful!",
+          "You will be directed to HomePage",
+          Icons.lock_clock_outlined,
+          Duration(seconds: 20));
       UserModel? userModel = await getCurrentUserData();
 
-      // await Navigator.pushAndRemoveUntil(
-      //   context,
-      //   MaterialPageRoute(
-      //     builder: (context) => HomeApplicationScreen(
-      //       userModel: userModel,
-      //     ),
-      //   ),
-      //   (route) => false,
-      // );
+      await Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(
+          builder: (context) => HomeApplicationScreen(
+            userModel: userModel,
+          ),
+        ),
+        (route) => false,
+      );
     } catch (error) {
-     // showSnackBar(context, "email or password inccorect $error");
+      showSnackBar(context, "email or password inccorect $error");
       print("Error signing in: $error");
       return null;
     }
@@ -128,7 +165,7 @@ class AuthRepository {
     required String name,
     required String gender,
     required String relationGoals,
-    required String age,
+    required int age,
     required String birthday,
     required List<dynamic> interests,
     required String country,
@@ -138,6 +175,12 @@ class AuthRepository {
       await auth
           .createUserWithEmailAndPassword(email: email, password: password)
           .then((user) async {
+        showPopUp(
+            context,
+            "Register Successful!",
+            "You will be directed to HomePage",
+            Icons.lock_clock_outlined,
+            Duration(seconds: 20));
         List<String>? urlImage = await ref
             .read(commonFirebaseStorageRepositoryProvider)
             .saveUserImageToStorage(uid: user.user!.uid, files: imageURLs);
@@ -159,18 +202,21 @@ class AuthRepository {
           noteAccount: 0,
           numberPisit: 10,
         );
-         showPopUp(
-             context,
-             "Register Successful!",
-             "You will be directed to HomePage",
-             Icons.lock_clock_outlined,
-             Duration(seconds: 20));
+
         await firestore
             .collection('Users')
             .doc(user.user!.uid)
             .set(userModel.toMap());
 
-       
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+            builder: (context) => HomeApplicationScreen(
+              userModel: userModel,
+            ),
+          ),
+          (route) => false,
+        );
       });
     } on FirebaseAuthException catch (error) {
       print("Error signing up: $error");
@@ -197,14 +243,40 @@ class AuthRepository {
         );
   }
 
+  // Future<void> saveUserDataToFirebase(
+  //     String username, String profileImageUrl) async {
+  //   try {
+  //     // Reference to the user's document in Firestore
+  //     DocumentReference userRef = firestore.collection('users').doc();
+
+  //     // Data to update in the user's document
+  //     Map<String, dynamic> userData = {
+  //       'username': username,
+  //       'profileImageUrl': profileImageUrl ?? '',
+  //       // Add any other fields you want to save
+  //     };
+
+  //     // Update the user's document in Firestore
+  //     await userRef.set(userData, SetOptions(merge: true));
+  //   } catch (error) {
+  //     print("Error saving user data: $error");
+  //     // Handle the error accordingly
+  //   }
+  //}
 
   // Function to fetch user data from Firebase
-  Future<UserModel?> fetchUserData() async {
+  StreamController<UserModel> _userDataStreamController =
+      StreamController<UserModel>.broadcast();
+
+  Stream<UserModel> get userDataStream => _userDataStreamController.stream;
+
+  Stream<UserModel> fetchUserData() async* {
     try {
       // Check if a user is signed in
       final User? firebaseUser = auth.currentUser;
       if (firebaseUser == null) {
-        return null;
+        _userDataStreamController.addError('User not signed in');
+        return;
       }
 
       // Fetch additional user data from Firestore
@@ -214,7 +286,7 @@ class AuthRepository {
       if (userSnapshot.exists) {
         final Map<String, dynamic> userData =
             userSnapshot.data() as Map<String, dynamic>;
-        return UserModel(
+        final userModel = UserModel(
           uid: firebaseUser.uid,
           name: userData['name'] ?? '',
           age: userData['age'] ?? '',
@@ -226,17 +298,23 @@ class AuthRepository {
           bio: userData['bio'] ?? '',
           jobTitle: userData['jobTitle'] ?? '',
           country: userData['country'] ?? '',
-          lastActive: userData['last_active'] ?? DateTime.now(), //.toDate(),
+          lastActive: userData['last_active'] ?? DateTime.now(),
           noteAccount: userData['noteAccount'] ?? 0,
           scoreAccount: userData['scoreAccount'] ?? 0,
           numberPisit: userData['numberPisit'] ?? 0,
         );
+        _userDataStreamController.add(userModel);
+        yield userModel; // Yield the user model to the stream
       } else {
-        return null;
+        _userDataStreamController.addError('User data not found');
       }
     } catch (e) {
       print('Error fetching user data: $e');
-      return null;
+      _userDataStreamController.addError('Error fetching user data: $e');
     }
+  }
+
+  void dispose() {
+    _userDataStreamController.close();
   }
 }

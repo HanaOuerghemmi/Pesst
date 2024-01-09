@@ -3,7 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pesst/features/auth/controller/auth_controller.dart';
 import 'package:pesst/features/auth/screens/home_auh_screen.dart';
-import 'package:pesst/features/home/screen/home_application_screen.dart';
+import 'package:pesst/features/home/screen/home/screen/home_application_screen.dart';
 import 'package:pesst/firebase_options.dart';
 import 'package:pesst/routes/router.dart';
 import 'package:pesst/utils/colors.dart';
@@ -38,8 +38,8 @@ class MyApp extends ConsumerWidget {
       home: //const HomeAuthScreen(),
           //! +++ we can use  Future BUilder and handle all case of State Connecction
           
-          ref.watch(userDataProvider).when(
-         // ref.watch(userDataStreamProvider).when(
+         // ref.watch(userDataProvider).when(
+          ref.watch(userDataStreamProvider).when(
                 data: (user) {
                   if (user == null) {
                     return const HomeAuthScreen();

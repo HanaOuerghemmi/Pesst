@@ -4,7 +4,7 @@ import 'dart:convert';
 class UserModel {
   final String uid;
   final String name;
-  final String age;
+  final int age;
   final String birthday;
 
   final String gender;

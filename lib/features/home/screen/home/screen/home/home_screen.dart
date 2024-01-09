@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pesst/features/home/controller/home_controller.dart';
-import 'package:pesst/features/home/screen/profile/user_profile.dart';
+import 'package:pesst/features/home/screen/home/screen/user_profile/user_profile.dart';
+
 
 
 import 'package:pesst/models/user_model.dart';
@@ -176,11 +177,11 @@ class ItemListUsers extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Navigator.pushNamed(
-        //   context,
-        //   UserProfile.routeName,
-        //   arguments: {"userModel": userModel, "ownUserModel": ownUserModel},
-        // );
+         Navigator.pushNamed(
+           context,
+           UserProfile.routeName,
+           arguments: {"userModel": userModel, "ownUserModel": ownUserModel},
+         );
       },
       child: Stack(
         children: [

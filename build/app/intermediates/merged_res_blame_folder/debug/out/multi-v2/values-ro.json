@@ -4,7 +4,24 @@
             "outputFile": "com.example.pesst.app-mergeDebugResources-24:/values-ro/values-ro.xml",
             "map": [
                 {
-                    "source": "/home/hana/.gradle/caches/transforms-3/7ccdcd228c101069db7aa7e56652619b/transformed/jetified-play-services-base-18.0.1/res/values-ro/values.xml",
+                    "source": "/home/hana/.gradle/caches/transforms-3/55b4e390742817dc4b9653e42d791034/transformed/jetified-play-services-basement-18.1.0/res/values-ro/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "140",
+                        "endOffsets": "335"
+                    },
+                    "to": {
+                        "startLines": "17",
+                        "startColumns": "4",
+                        "startOffsets": "1802",
+                        "endColumns": "144",
+                        "endOffsets": "1942"
+                    }
+                },
+                {
+                    "source": "/home/hana/.gradle/caches/transforms-3/680a2964d8a0bce7cbd43c0f88e0420c/transformed/jetified-play-services-base-18.0.1/res/values-ro/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/hana/.gradle/caches/transforms-3/25c764ce68c4f6c3c24e49293555f274/transformed/browser-1.4.0/res/values-ro/values-ro.xml",
+                    "source": "/home/hana/.gradle/caches/transforms-3/3b15f093a1d4ccfedac46d94f54273e7/transformed/browser-1.4.0/res/values-ro/values-ro.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -38,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "/home/hana/.gradle/caches/transforms-3/cd4004a5a8de6d0562a63088cfc87de7/transformed/core-1.10.1/res/values-ro/values-ro.xml",
+                    "source": "/home/hana/.gradle/caches/transforms-3/889ce5bd12f1117e5357d5fcdb5e1305/transformed/core-1.10.1/res/values-ro/values-ro.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -52,23 +69,6 @@
                         "startOffsets": "55,153,255,355,454,556,665,3471",
                         "endColumns": "97,101,99,98,101,108,116,100",
                         "endOffsets": "148,250,350,449,551,660,777,3567"
-                    }
-                },
-                {
-                    "source": "/home/hana/.gradle/caches/transforms-3/b18aed4023d7a057ad17f165b0b39275/transformed/jetified-play-services-basement-18.1.0/res/values-ro/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "195",
-                        "endColumns": "140",
-                        "endOffsets": "335"
-                    },
-                    "to": {
-                        "startLines": "17",
-                        "startColumns": "4",
-                        "startOffsets": "1802",
-                        "endColumns": "144",
-                        "endOffsets": "1942"
                     }
                 }
             ]

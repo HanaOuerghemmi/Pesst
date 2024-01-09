@@ -3,20 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pesst/features/auth/repository/auth_repository.dart';
 import 'package:pesst/models/user_model.dart';
-
 final authControllerProvider = Provider((ref) {
   final authRepository = ref.watch(authRepositoryProvider);
   return AuthController(authRepository: authRepository, ref: ref);
 });
 
-final userDataAuthProvider = FutureProvider.autoDispose((ref) {
-  final authController = ref.watch(authRepositoryProvider);
-  return authController.getCurrentUserData();
-});
+// final userDataAuthProvider = FutureProvider.autoDispose((ref) {
+//   final authController = ref.watch(authRepositoryProvider);
+//   return authController.getCurrentUserData();
+// });
 
-final userDataProvider = FutureProvider.autoDispose((ref) {
+final userDataProvider = StreamProvider<UserModel?>((ref) {
   final authController = ref.watch(authRepositoryProvider);
   return authController.fetchUserData();
+});
+
+final userDataStreamProvider = StreamProvider<UserModel?>((ref) {
+  final authController = ref.watch(authRepositoryProvider);
+
+  return authController.getCurrentUserDataAsStream();
 });
 
 class AuthController {
@@ -48,6 +53,10 @@ class AuthController {
         email: email, newPassword: newPassword);
   }
 
+  Future<void> resetPassword(BuildContext context, String email) async {
+    await authRepository.resetPassword(context, email);
+  }
+
   ///! reset
   Future<void> updatePassword(String userEmail, String newPassword) async {
     await authRepository.updatePassword(userEmail, newPassword);
@@ -62,7 +71,7 @@ class AuthController {
     required String name,
     required String gender,
     required String relationGoals,
-    required String age,
+    required int age,
     required String birthday,
     required List<dynamic> interests,
     required String country,
@@ -97,7 +106,7 @@ class AuthController {
     return authRepository.userData(userId);
   }
 
-  Future<UserModel?> fetchUserData() {
+  Stream<UserModel?> fetchUserData() {
     return authRepository.fetchUserData();
   }
 }

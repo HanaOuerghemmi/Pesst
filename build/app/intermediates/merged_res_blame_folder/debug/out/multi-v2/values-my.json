@@ -4,7 +4,24 @@
             "outputFile": "com.example.pesst.app-mergeDebugResources-24:/values-my/values-my.xml",
             "map": [
                 {
-                    "source": "/home/hana/.gradle/caches/transforms-3/7ccdcd228c101069db7aa7e56652619b/transformed/jetified-play-services-base-18.0.1/res/values-my/values.xml",
+                    "source": "/home/hana/.gradle/caches/transforms-3/3b15f093a1d4ccfedac46d94f54273e7/transformed/browser-1.4.0/res/values-my/values-my.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,164,270,385",
+                        "endColumns": "108,105,114,106",
+                        "endOffsets": "159,265,380,487"
+                    },
+                    "to": {
+                        "startLines": "27,28,29,30",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3151,3260,3366,3481",
+                        "endColumns": "108,105,114,106",
+                        "endOffsets": "3255,3361,3476,3583"
+                    }
+                },
+                {
+                    "source": "/home/hana/.gradle/caches/transforms-3/680a2964d8a0bce7cbd43c0f88e0420c/transformed/jetified-play-services-base-18.0.1/res/values-my/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,24 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/hana/.gradle/caches/transforms-3/b18aed4023d7a057ad17f165b0b39275/transformed/jetified-play-services-basement-18.1.0/res/values-my/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "195",
-                        "endColumns": "149",
-                        "endOffsets": "344"
-                    },
-                    "to": {
-                        "startLines": "17",
-                        "startColumns": "4",
-                        "startOffsets": "1825",
-                        "endColumns": "153",
-                        "endOffsets": "1974"
-                    }
-                },
-                {
-                    "source": "/home/hana/.gradle/caches/transforms-3/cd4004a5a8de6d0562a63088cfc87de7/transformed/core-1.10.1/res/values-my/values-my.xml",
+                    "source": "/home/hana/.gradle/caches/transforms-3/889ce5bd12f1117e5357d5fcdb5e1305/transformed/core-1.10.1/res/values-my/values-my.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -55,20 +55,20 @@
                     }
                 },
                 {
-                    "source": "/home/hana/.gradle/caches/transforms-3/25c764ce68c4f6c3c24e49293555f274/transformed/browser-1.4.0/res/values-my/values-my.xml",
+                    "source": "/home/hana/.gradle/caches/transforms-3/55b4e390742817dc4b9653e42d791034/transformed/jetified-play-services-basement-18.1.0/res/values-my/values.xml",
                     "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,164,270,385",
-                        "endColumns": "108,105,114,106",
-                        "endOffsets": "159,265,380,487"
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "149",
+                        "endOffsets": "344"
                     },
                     "to": {
-                        "startLines": "27,28,29,30",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "3151,3260,3366,3481",
-                        "endColumns": "108,105,114,106",
-                        "endOffsets": "3255,3361,3476,3583"
+                        "startLines": "17",
+                        "startColumns": "4",
+                        "startOffsets": "1825",
+                        "endColumns": "153",
+                        "endOffsets": "1974"
                     }
                 }
             ]

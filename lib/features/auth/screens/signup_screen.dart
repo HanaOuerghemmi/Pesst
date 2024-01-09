@@ -116,8 +116,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
           gender: gender[0],
           relationGoals: relationGoals[0],
           age: calculateAge(
-                  "${dayController.text}/${monthController.text}/${yearController.text}")
-              .toString(),
+              "${dayController.text}/${monthController.text}/${yearController.text}"),
           birthday:
               "${dayController.text}/${monthController.text}/${yearController.text}",
           interests: interests,
@@ -160,6 +159,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
             // continue to the next case
             //send otp
             otp = generateOTP();
+            print(otp);
             sendOTPToEmail(emailController.text, otp);
           }
         }

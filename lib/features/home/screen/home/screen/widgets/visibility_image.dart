@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pesst/features/home/screen/widgets/image_widget.dart';
+import 'package:pesst/features/home/screen/home/screen/widgets/image_widget.dart';
 import 'package:pesst/utils/helper_padding.dart';
 
 class VisibilityImage extends StatelessWidget {

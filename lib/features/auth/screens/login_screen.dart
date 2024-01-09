@@ -7,7 +7,7 @@ import 'package:pesst/features/auth/screens/widgets/goto_signup.dart';
 import 'package:pesst/utils/helper_padding.dart';
 import 'package:pesst/utils/helper_textstyle.dart';
 import 'package:pesst/widgets/custom_button.dart';
-
+import 'package:pesst/common/forget_password/reset_password.dart';
 class LoginScreen extends ConsumerStatefulWidget {
   static const routeName = '/login-screen';
   const LoginScreen({super.key});
@@ -55,6 +55,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 smallPaddingVert,
                 //* ussing a textfiel with validate function shoing snackbar
                 CustomValidateTextField(
+                    keyboardType:TextInputType.emailAddress,
                     controller: emailController,
                     nameTextField: "Email",
                     prefixIcon: const Icon(
@@ -105,7 +106,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   alignment: Alignment.topRight,
                   child: TextButton(
                       onPressed: () {
-                      //  Navigator.pushNamed(context, resetPassword.routeName);
+                        Navigator.pushNamed(context, resetPassword.routeName);
                       },
                       child: Text(
                         "Forget Password?",

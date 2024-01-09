@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pesst/features/auth/screens/widgets/title_widget.dart';
 import 'package:pesst/features/chat/controller/chat_controller.dart';
-import 'package:pesst/features/home/screen/profile/user_profile.dart';
+import 'package:pesst/features/home/screen/home/screen/user_profile/user_profile.dart';
+
 import 'package:pesst/models/request_model.dart';
 import 'package:pesst/models/user_model.dart';
 import 'package:pesst/utils/colors.dart';
 import 'package:pesst/utils/helper_padding.dart';
 import 'package:pesst/utils/helper_textstyle.dart';
 import 'package:pesst/widgets/custom_button.dart';
-
 
 
 //! pop up send request
@@ -44,9 +44,11 @@ void simplePisitDialog(
                 // ),
                 smallPaddingVert,
                 Text(
-                  sender.name,
-                  style: textStyleTextBold,
-                )
+                           sender.name.length > 8
+                              ?  sender.name.substring(0, 7) +
+                                  "..."  
+                              :  sender.name ,style: textStyleTextBold,
+                        ),
               ],
             ),
 
@@ -84,9 +86,15 @@ void simplePisitDialog(
                 // ),
                 smallPaddingVert,
                 Text(
-                  recipient.name,
-                  style: textStyleTextBold,
-                )
+                           recipient.name.length > 8
+                              ?  recipient.name.substring(0, 7) +
+                                  "..."  
+                              :  recipient.name ,style: textStyleTextBold,
+                        ),
+                // Text(
+                //   recipient.name,
+                //   style: textStyleTextBold,
+                // )
               ],
             ),
           ],
@@ -114,7 +122,6 @@ void simplePisitDialog(
                         currentUserId: sender.uid,
                         senderUserModel: sender,
                       );
-
                   Navigator.pop(context);
                   Navigator.pop(context);
                 },
@@ -147,7 +154,14 @@ void popUpRepondRequestDialog(
               children: [
                 GestureDetector(
                     onTap: () {
-                     
+                      Navigator.pushNamed(
+                        context,
+                        UserProfile.routeName,
+                        arguments: {
+                          "userModel": sender,
+                          "ownUserModel": recipient
+                        },
+                      );
                     },
                     child: Avaatar(urlPic: requestModel.imageSender)),
                 // ClipRRect(
@@ -160,10 +174,16 @@ void popUpRepondRequestDialog(
                 //   ),
                 // ),
                 smallPaddingVert,
-                Text(
-                  requestModel.nameSender,
-                  style: textStyleTextBold,
-                )
+                 Text(
+                           requestModel.nameSender.length > 8
+                              ?  requestModel.nameSender.substring(0, 7) +
+                                  "..."  
+                              :  requestModel.nameSender ,style: textStyleTextBold,
+                        ),
+                // Text(
+                //   requestModel.nameSender,
+                //   style: textStyleTextBold,
+                // )
               ],
             ),
             Image.asset(
@@ -184,54 +204,59 @@ void popUpRepondRequestDialog(
                 //   ),
                 // ),
                 smallPaddingVert,
-                Text(
-                  recipient.name,
-                  style: textStyleTextBold,
-                )
+                 SubstringName(name: recipient.name,),
+                // Text(
+                //   recipient.name,
+                //   style: textStyleTextBold,
+                // )
               ],
             ),
           ],
         ),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // smallPaddingVert,
-            // Align(
-            //   alignment: Alignment.topLeft,
-            //   child: Text(
-            //     "${requestModel.nameSender} :",
-            //     style: textStyleTextBold,
-            //   ),
-            // ),
-            smallPaddingVert,
-            SingleChildScrollView(
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: lightColor, // Adjust the color of the box as needed
-                ),
-                width: double.maxFinite,
-                height: 70,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    requestModel.opener,
-                    style: textStyleTextBold,
+        content: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // smallPaddingVert,
+              // Align(
+              //   alignment: Alignment.topLeft,
+              //   child: Text(
+              //     "${requestModel.nameSender} :",
+              //     style: textStyleTextBold,
+              //   ),
+              // ),
+              smallPaddingVert,
+              SingleChildScrollView(
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: lightColor, // Adjust the color of the box as needed
+                  ),
+                  width: double.maxFinite,
+                  height: 70,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      requestModel.opener,
+                      style: textStyleTextBold.copyWith(
+                                               fontSize: 12, fontWeight: FontWeight.w500),
+                    ),
                   ),
                 ),
               ),
-            ),
-            smallPaddingVert,
-            CustomTextField(
-              hintText: "Repond about your Request...",
-              obscureText: false,
-              controller: controller,
-              maxLines: 2,
-              style: textStyleTextBold.copyWith(
-                fontSize: 16,
-              ),
-            )
-          ],
+              smallPaddingVert,
+              CustomTextField(
+                hintText: "Repond about your Request...",
+                obscureText: false,
+                controller: controller,
+                maxLines: 2,
+                style: textStyleTextBold.copyWith(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w300
+                ),
+              )
+            ],
+          ),
         ),
         actions: <Widget>[
           Consumer(
@@ -329,6 +354,24 @@ void popUpRepondRequestDialog(
       );
     },
   );
+}
+
+class SubstringName extends StatelessWidget {
+  final String name;
+  final TextStyle? style;
+  const SubstringName({
+    super.key, required this.name, this.style, 
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+              name.length > 8
+                 ?  name.substring(0, 7) +
+                     "..."  
+                 :  name ,style: style ?? textStyleTextBold,
+           );
+  }
 }
 
 Future<void> showPopRequest(BuildContext context) async {
