@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pesst/features/auth/screens/widgets/title_widget.dart';
 import 'package:pesst/features/chat/controller/chat_controller.dart';
-import 'package:pesst/features/home/screen/home/screen/user_profile/user_profile.dart';
+import 'package:pesst/features/home/screen/user_profile/user_profile.dart';
 
 import 'package:pesst/models/request_model.dart';
 import 'package:pesst/models/user_model.dart';

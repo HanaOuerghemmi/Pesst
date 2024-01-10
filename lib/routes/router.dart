@@ -4,8 +4,9 @@ import 'package:pesst/common/forget_password/otp_verification.dart';
 import 'package:pesst/common/forget_password/reset_password.dart';
 
 import 'package:pesst/features/auth/screens/login_screen.dart';
-import 'package:pesst/features/home/screen/home/screen/edit_profile/edit_profile.dart';
-import 'package:pesst/features/home/screen/home/screen/user_profile/user_profile.dart';
+import 'package:pesst/features/chat/screens/chat_contact_screen.dart';
+import 'package:pesst/features/home/screen/edit_profile/edit_profile.dart';
+import 'package:pesst/features/home/screen/user_profile/user_profile.dart';
 import 'package:pesst/models/user_model.dart';
 
 
@@ -59,15 +60,15 @@ Route<dynamic> generateRoute(RouteSettings settings) {
         ),
       );
 
-    // case ChatContactScreen.routeName:
-    //   final arguments = settings.arguments as Map<String, dynamic>;
+     case ChatContactScreen.routeName:
+       final arguments = settings.arguments as Map<String, dynamic>;
 
-    //   return MaterialPageRoute(
-    //     builder: (context) => ChatContactScreen(
-    //       nameContact: arguments['nameContact'] as String,
-    //       idContact: arguments['idContact'] as String,
-    //     ),
-    //   );
+       return MaterialPageRoute(
+         builder: (context) => ChatContactScreen(
+           nameContact: arguments['nameContact'] as String,
+           idContact: arguments['idContact'] as String,
+         ),
+       );
  case  EditProfile.routeName:
 
  final arguments = settings.arguments as Map<String, dynamic>;

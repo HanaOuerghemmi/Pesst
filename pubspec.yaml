@@ -47,6 +47,8 @@ dependencies:
   badges: ^3.1.2
   cached_network_image: ^3.3.1
   flutter_svg: ^2.0.9
+  emoji_picker_flutter: ^1.6.3
+  swipe_to: ^1.0.5
   
 
 

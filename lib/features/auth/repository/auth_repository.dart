@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pesst/common/storage_firebase.dart';
 import 'package:pesst/features/auth/screens/home_auh_screen.dart';
-import 'package:pesst/features/home/screen/home/screen/home_application_screen.dart';
+import 'package:pesst/features/home/screen/home_application_screen.dart';
 
 import 'package:pesst/models/user_model.dart';
 
