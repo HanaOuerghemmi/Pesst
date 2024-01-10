@@ -55,6 +55,7 @@ INJECTED from /home/hana/HanaDoc/pesst/android/app/src/main/AndroidManifest.xml:
 INJECTED from /home/hana/HanaDoc/pesst/android/app/src/main/AndroidManifest.xml:1:1-35:12
 INJECTED from /home/hana/HanaDoc/pesst/android/app/src/main/AndroidManifest.xml:1:1-35:12
 MERGED from /home/hana/HanaDoc/pesst/android/app/src/main/AndroidManifest.xml:1:1-35:12
+MERGED from [:shared_preferences_android] /home/hana/HanaDoc/pesst/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:firebase_auth] /home/hana/HanaDoc/pesst/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-17:12
 MERGED from [:firebase_storage] /home/hana/HanaDoc/pesst/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-17:12
 MERGED from [:cloud_firestore] /home/hana/HanaDoc/pesst/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-17:12
@@ -63,6 +64,7 @@ MERGED from [:image_picker_android] /home/hana/HanaDoc/pesst/build/image_picker_
 MERGED from [:flutter_plugin_android_lifecycle] /home/hana/HanaDoc/pesst/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:sqflite] /home/hana/HanaDoc/pesst/build/sqflite/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:path_provider_android] /home/hana/HanaDoc/pesst/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:emoji_picker_flutter] /home/hana/HanaDoc/pesst/build/emoji_picker_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-auth:22.3.0] /home/hana/.gradle/caches/transforms-3/8f321ae7b2fefec4ba0b738a6fb8396c/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:17:1-75:12
 MERGED from [com.google.firebase:firebase-firestore:24.9.1] /home/hana/.gradle/caches/transforms-3/cdcc585bf5bfb7b79234bf5eb0173e42/transformed/jetified-firebase-firestore-24.9.1/AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.firebase:firebase-storage:20.3.0] /home/hana/.gradle/caches/transforms-3/bbf749186807067795d9e875959ef2ea/transformed/jetified-firebase-storage-20.3.0/AndroidManifest.xml:15:1-39:12
@@ -81,10 +83,10 @@ MERGED from [com.google.android.gms:play-services-basement:18.1.0] /home/hana/.g
 MERGED from [androidx.fragment:fragment:1.1.0] /home/hana/.gradle/caches/transforms-3/bd3b08f2286d6f234db7d387c15cb207/transformed/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.7.2] /home/hana/.gradle/caches/transforms-3/b91d5b010bb7c1fbb9d04195e8906de4/transformed/jetified-activity-1.7.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] /home/hana/.gradle/caches/transforms-3/99750bb863b6fe460a7b5da8686e778d/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:17:1-23:12
-MERGED from [androidx.browser:browser:1.4.0] /home/hana/.gradle/caches/transforms-3/3b15f093a1d4ccfedac46d94f54273e7/transformed/browser-1.4.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /home/hana/.gradle/caches/transforms-3/e0a375e6442995f1692e67f5fe828763/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] /home/hana/.gradle/caches/transforms-3/4698c8389aab97a13185bbdca047bcf7/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.window:window:1.0.0-beta04] /home/hana/.gradle/caches/transforms-3/076eb9235982ee06112d76594ea8585f/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.browser:browser:1.4.0] /home/hana/.gradle/caches/transforms-3/3b15f093a1d4ccfedac46d94f54273e7/transformed/browser-1.4.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core-ktx:1.10.1] /home/hana/.gradle/caches/transforms-3/47085114ff49c80095b55db1e8d4ce63/transformed/jetified-core-ktx-1.10.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.customview:customview:1.0.0] /home/hana/.gradle/caches/transforms-3/0d50aa8e7d8ffd3dff2c66572b1a2e4b/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.10.1] /home/hana/.gradle/caches/transforms-3/889ce5bd12f1117e5357d5fcdb5e1305/transformed/core-1.10.1/AndroidManifest.xml:17:1-30:12
@@ -146,6 +148,8 @@ uses-sdk
 INJECTED from /home/hana/HanaDoc/pesst/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/hana/HanaDoc/pesst/android/app/src/main/AndroidManifest.xml
 INJECTED from /home/hana/HanaDoc/pesst/android/app/src/main/AndroidManifest.xml
+MERGED from [:shared_preferences_android] /home/hana/HanaDoc/pesst/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:shared_preferences_android] /home/hana/HanaDoc/pesst/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:firebase_auth] /home/hana/HanaDoc/pesst/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:firebase_auth] /home/hana/HanaDoc/pesst/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:firebase_storage] /home/hana/HanaDoc/pesst/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
@@ -162,6 +166,8 @@ MERGED from [:sqflite] /home/hana/HanaDoc/pesst/build/sqflite/intermediates/merg
 MERGED from [:sqflite] /home/hana/HanaDoc/pesst/build/sqflite/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] /home/hana/HanaDoc/pesst/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] /home/hana/HanaDoc/pesst/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:emoji_picker_flutter] /home/hana/HanaDoc/pesst/build/emoji_picker_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:emoji_picker_flutter] /home/hana/HanaDoc/pesst/build/emoji_picker_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-auth:22.3.0] /home/hana/.gradle/caches/transforms-3/8f321ae7b2fefec4ba0b738a6fb8396c/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:21:5-23:64
 MERGED from [com.google.firebase:firebase-auth:22.3.0] /home/hana/.gradle/caches/transforms-3/8f321ae7b2fefec4ba0b738a6fb8396c/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:21:5-23:64
 MERGED from [com.google.firebase:firebase-firestore:24.9.1] /home/hana/.gradle/caches/transforms-3/cdcc585bf5bfb7b79234bf5eb0173e42/transformed/jetified-firebase-firestore-24.9.1/AndroidManifest.xml:6:5-44
@@ -198,14 +204,14 @@ MERGED from [androidx.activity:activity:1.7.2] /home/hana/.gradle/caches/transfo
 MERGED from [androidx.activity:activity:1.7.2] /home/hana/.gradle/caches/transforms-3/b91d5b010bb7c1fbb9d04195e8906de4/transformed/jetified-activity-1.7.2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.window:window-java:1.0.0-beta04] /home/hana/.gradle/caches/transforms-3/99750bb863b6fe460a7b5da8686e778d/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] /home/hana/.gradle/caches/transforms-3/99750bb863b6fe460a7b5da8686e778d/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
-MERGED from [androidx.browser:browser:1.4.0] /home/hana/.gradle/caches/transforms-3/3b15f093a1d4ccfedac46d94f54273e7/transformed/browser-1.4.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.browser:browser:1.4.0] /home/hana/.gradle/caches/transforms-3/3b15f093a1d4ccfedac46d94f54273e7/transformed/browser-1.4.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] /home/hana/.gradle/caches/transforms-3/e0a375e6442995f1692e67f5fe828763/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] /home/hana/.gradle/caches/transforms-3/e0a375e6442995f1692e67f5fe828763/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] /home/hana/.gradle/caches/transforms-3/4698c8389aab97a13185bbdca047bcf7/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] /home/hana/.gradle/caches/transforms-3/4698c8389aab97a13185bbdca047bcf7/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.window:window:1.0.0-beta04] /home/hana/.gradle/caches/transforms-3/076eb9235982ee06112d76594ea8585f/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.window:window:1.0.0-beta04] /home/hana/.gradle/caches/transforms-3/076eb9235982ee06112d76594ea8585f/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.4.0] /home/hana/.gradle/caches/transforms-3/3b15f093a1d4ccfedac46d94f54273e7/transformed/browser-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.4.0] /home/hana/.gradle/caches/transforms-3/3b15f093a1d4ccfedac46d94f54273e7/transformed/browser-1.4.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core-ktx:1.10.1] /home/hana/.gradle/caches/transforms-3/47085114ff49c80095b55db1e8d4ce63/transformed/jetified-core-ktx-1.10.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core-ktx:1.10.1] /home/hana/.gradle/caches/transforms-3/47085114ff49c80095b55db1e8d4ce63/transformed/jetified-core-ktx-1.10.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.customview:customview:1.0.0] /home/hana/.gradle/caches/transforms-3/0d50aa8e7d8ffd3dff2c66572b1a2e4b/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
